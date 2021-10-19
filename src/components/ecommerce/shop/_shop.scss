@@ -1,0 +1,30 @@
+.shop {
+    overflow: hidden;
+    margin: 0 auto;
+    background: $white;
+    // width: 100%;
+}
+
+.shop-container {
+    position: relative;
+    height: 100%;
+    margin: 0 auto;
+    padding: 2rem;
+    overflow: hidden;
+
+    .product-list {
+        margin: 0 1rem;
+        padding: 1rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+        grid-gap: 1rem;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        @include breakpoint-up(large){
+            grid-row-gap: 3rem;
+            margin-left: 3rem;
+        }
+    }
+}

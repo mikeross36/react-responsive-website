@@ -1,0 +1,42 @@
+.shop-nav {
+    padding: .5rem 2rem;
+    background: url(images/metal-wallpaper.jpg) top center/cover no-repeat;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: $boxShadow;
+
+    & h2 {
+        text-transform: capitalize;
+        text-shadow: $textShadow;
+        color: $mainOrange;
+        letter-spacing: 3px;
+        text-align: center;
+        font-weight: 900;
+    }
+}
+
+.cart-icon-wrapper {
+    display: block;
+    margin: 0 1rem;
+    cursor: pointer;
+    position: relative;
+
+    & .cart-icon {
+        font-size: 3.5rem;
+        color: $white;
+        filter: drop-shadow($textShadow);
+    }
+
+    & .cart-count {
+        position: absolute;
+        top: -.6rem;
+        right: -1rem;
+        padding: .3rem .6rem;
+        border-radius: 5rem;
+        background: $mainRed;
+        color: $white;
+        font-size: 1.3rem;
+        font-weight: 600; 
+    }
+}

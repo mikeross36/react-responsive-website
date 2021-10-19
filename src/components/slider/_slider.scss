@@ -1,0 +1,148 @@
+.slider {
+    width: 100%;
+    height: 100vh;
+    padding: 1rem;
+    position: relative;
+
+    @include breakpoint-up(medium){
+        padding-top: 3rem;
+        &::before {
+            top: 0;
+            left: 5%;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            content: '';
+            background-color: $mainOrange;
+            clip-path: polygon(0 10%, 90% 5%, 60% 85%, 0 55%);
+            z-index: -99;
+        }
+    }
+
+    @include breakpoint-up(large){
+        padding-top: 3rem;
+
+        &::before {
+            left: 10%;
+            clip-path: polygon(0 10%, 80% 5%, 60% 85%, 0 60%);
+        }
+    }
+
+    & h2 {
+        text-transform: uppercase;
+        color: $white;
+        letter-spacing: 2px;
+        text-align: center;
+        text-shadow: $textShadow;
+        margin-bottom: 2rem;
+    }
+
+    & button {
+        position: absolute;
+        bottom: 0%;
+        background: transparent;
+        color: $white;
+        border: none;
+        outline: none;
+        font-size: 2.5rem;
+        cursor: pointer;
+        transition: all .3s linear;
+
+        @include breakpoint-up(medium){
+            color: $mainOrange
+        }
+    }
+}
+
+.slider-wrapper {
+    background: linear-gradient(
+        rgba($white, .3), 
+        rgba($white, .3)), 
+        url(images/guitar.jpg) center/cover no-repeat;
+    margin: 0 auto;
+    margin-top: 2rem;
+    width: 100%;
+    height: 27rem;
+    max-width: 42rem;
+    text-align: center;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    border-radius: .625rem;
+    box-shadow: $boxShadow;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all 0.5s linear;
+    text-shadow: $textShadow;
+    padding: 0 1rem;
+
+    &.active-slide {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    &.prev-slide {
+        transform: translateX(-100%)
+    }
+    &.next-slide {
+        transform: translateX(100%)
+    }
+
+    & img {
+        border-radius: 50%;
+        margin-top: 1rem;
+        width: 180px;
+        height: 180px;
+        object-fit: cover;
+        border: 4px solid $white;
+        box-shadow: $boxShadow;
+    }
+
+    & h3 {
+        text-transform: uppercase;
+        color: $white;
+        margin-bottom: .5rem;
+    }
+
+    .title {
+        text-transform: capitalize;
+        margin-bottom: .5rem;
+        color: $white; 
+    }
+
+    .quote {
+        max-width: 35em;
+        margin: 0 auto;
+        line-height: 1.2;
+        color: $white;
+        font-style: italic;
+    }
+
+    .quote-icon {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        color: $white;
+    }
+}
+
+.prev-btn {
+    left: 20%;
+    top: 75%;
+    &:focus {
+        outline: none;
+    }
+}
+
+.next-btn {
+    right: 20%;
+    top: 75%;
+    &:focus {
+        outline: none;
+    }
+}

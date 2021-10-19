@@ -1,0 +1,209 @@
+.tabs {
+    margin: 2rem 0;
+    // box-shadow: $boxShadow;
+    height: 100%;
+
+    @include breakpoint-up(large){
+        padding: 2rem;
+    }
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    grid-gap: 1rem;
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    box-shadow: $boxShadow;
+    background: linear-gradient(
+        rgba($bodyBackground, .5),
+        rgba($bodyBackground, .5)),
+        url(images/dr-gregory-house3.jpg)  top/cover no-repeat;
+
+    @include breakpoint-up(medium){
+        grid-template-columns: repeat(6, 1fr);
+    } 
+}
+
+.tabs-header {
+    grid-column: 1/-1;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+    max-width: 40rem;
+
+    & h3 {
+        color: $white;
+        text-transform: capitalize;
+        text-shadow: $textShadow;
+        margin-bottom: 0;
+        line-height: 1.3;
+
+        @include breakpoint-up(large){
+            font-size: 2rem;
+        }
+    }
+    
+    & p {
+        font-size: .9rem;
+        padding: 0 1rem;
+        color: $white;
+        text-shadow: $textShadow;
+        line-height: 1.4;
+
+        @include breakpoint-up(medium){
+            font-size: 1.3rem;
+        }
+    }
+}
+
+.tabs-btn-box {
+    grid-column: 1/-1;
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    @include breakpoint-up(medium){
+        margin: 0 4rem;
+        grid-column-gap: 4rem;
+    }
+}
+
+.btn1, .btn2, .btn3 {
+    background: transparent;
+    color: $white;
+    border: 0;
+    outline: 0;
+    font-size: .8rem;
+    font-weight: 700;
+    text-shadow: $textShadow;
+    padding: .3rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: .5px solid $white;
+    box-shadow: $boxShadow;
+
+    @include breakpoint-up(medium){
+        font-size: 1.3rem;
+    }
+}
+
+.active-tab {
+    color: $mainOrange;
+    text-shadow: $textShadow;
+    font-size: 1rem;
+
+    @include breakpoint-up(medium){
+        font-size: 1.5rem;
+    }
+}
+
+.tabs-content {
+    grid-column: 1/-1;
+    grid-row: 3;
+    padding: 0 1rem;
+    height: 70vh;
+    transform: translateX(100%);
+    transition: transform .5s ease-in-out;
+
+    @include breakpoint-up(medium) {
+        padding: 0 2rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 1rem;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+.content3 .content-right img {
+    @include breakpoint-up(medium) {
+        width: 80%;
+    }
+    @include breakpoint-up(large) {
+        width: 60%;
+    }
+}
+
+.active-content {
+    transform: translateX(0%);
+    transition-delay: .3s;
+}
+
+.content-left {
+    @include breakpoint-up(medium) {
+        text-align: left;
+        padding-left: 3rem;
+        margin-top: -10rem;
+        grid-row: 1;
+    }
+
+    & h3 {
+        color: $mainOrange;
+        text-shadow: $textShadow;
+        text-align: center;
+        margin: 0;
+        line-height: 1.3;
+
+        @include breakpoint-up(medium) {
+            text-align: start;
+            width: 23rem;
+            line-height: 1.3;
+            font-size: 1.5rem;
+        }
+
+        @include breakpoint-up(large) {
+            width: 100%;
+        }
+
+        @media screen and (min-width: 84em){
+            font-size: 2.5rem;
+        }
+    }
+
+    & blockquote {
+        font-size: .875rem;
+        color: $white;
+        text-shadow: $textShadow;
+        line-height: 1.5;
+        margin: auto;
+        padding: 1rem 0;
+        text-align: center;
+
+        @include breakpoint-up(medium) {
+            font-size: 1rem;
+            text-align: left;
+        }
+
+        @include breakpoint-up(large) {
+            font-size: 1.3rem;
+            line-height: 1.7;
+        }
+    }
+}
+
+.main-button {
+    margin-top: 4rem;
+}
+
+.content-right {
+    display: flex;
+    justify-content: flex-end;
+
+    @media screen and (min-width: 64em) {
+        justify-content: center;
+    }
+
+    & img {
+        display: block;
+        width: 70%;
+    }
+}

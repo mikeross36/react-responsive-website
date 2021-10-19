@@ -1,0 +1,239 @@
+.header {
+    width: 100%;
+
+    & nav {
+        padding: 0 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+
+        @include breakpoint-up(large){
+            padding: .5rem 4rem;
+            justify-content: space-around;
+        }
+    }
+}
+
+.header-logo {
+    padding: .2rem .5rem;
+    font-size: 1rem;
+    font-style: italic;
+    font-weight: 700;
+    color: $white;
+    text-transform: capitalize;
+    text-shadow: $textShadow;
+    background: $mainOrange;
+    box-shadow: $boxShadow;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 1.2;
+    cursor: pointer;
+
+    @include breakpoint-up(large){
+        font-size: 1.2rem;
+    }
+}
+
+.menu-btn {
+    position: absolute;
+    height: 2rem;
+    width: 2.5rem;
+    right: 0;
+    top: 7%;
+    z-index: 10;
+    transform: rotate(0deg);
+    cursor: pointer;
+    transition: all .7s ease-in-out;
+    position: relative;
+
+    @include breakpoint-up(medium){
+        display: none;
+    }
+}
+
+.burger {
+    display: block;
+    position: absolute;
+    height: .4rem;
+    width: 100%;
+    background: $white;
+    opacity: 1;
+    left: 0;
+    border-radius: 1rem;
+    z-index: 10;
+    transform: rotate(0deg);
+    cursor: pointer;
+    transition: all .7s ease-in-out;
+    border-bottom: .1875rem solid transparent;
+
+    &:nth-child(1) {
+        top: 0;
+        &.open {
+            top: 1.125rem;
+            transform: rotate(135deg);
+        }
+    }
+    &:nth-child(2) {
+        top: .6875rem;
+        &.open {
+            opacity: 0;
+        }
+    }
+    &:nth-child(3) {
+        top: 1.375rem;
+        &.open {
+            top: 1.125rem;
+            transform: rotate(-135deg);
+        }
+    }
+}
+
+.desktop-links {
+    display: none;
+
+    @include breakpoint-up(medium){
+        display: flex;
+        align-items: center;
+        justify-items: left;
+        height: 100%;
+    }
+    @include breakpoint-up(large){
+        justify-self: left;
+    }
+
+    .desk-link-item {
+        text-transform: uppercase;
+        position: relative;
+
+        & a {
+            color: $white;
+            font-size: 1.3rem;
+            font-weight: 900;
+            letter-spacing: 1px;
+            text-shadow: $textShadow;
+
+            @include breakpoint-up(large){
+                font-size: 1.6rem;
+            }
+        }
+        
+        &:not(:last-child) {
+            margin-right: 3rem;
+
+            @include breakpoint-up(large){
+                margin-right: 4rem;
+            }
+        }
+    
+        &::before {
+            content: "";
+            position: absolute;
+            display: block;
+            height: .3rem;
+            left: 0;
+            right: 0;
+            bottom: -.6rem;
+            background: $mainOrange;
+            box-shadow: $boxShadow;
+            transform: scale(0, 1);
+            transition: transform .3s ease-in-out;
+        }
+    
+        &:hover::before {
+            transform: scale(1.2, 1);
+        }
+    }
+}
+
+@keyframes fade-in {
+    from {
+        visibility: hidden;
+        opacity: 0;
+    }
+    1% {
+        visibility: visible;
+        opacity: 0;
+    }
+    to {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    from {
+        visibility: visible;
+        opacity: 1;
+    }
+    99% {
+        visibility: visible;
+        opacity: 0;
+    }
+    to {
+        visibility: hidden;
+        opacity: 0;
+    }
+}
+
+.mobile-links {
+    visibility: hidden;
+    position: absolute;
+    margin: auto;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+    background: $bodyBackground;
+    z-index: 10;
+
+
+    @include breakpoint-up(medium){
+        visibility: hidden;
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    &.fade-in {
+        animation: fade-in .3s ease-in-out forwards;
+    }
+    &.fade-out {
+        animation: fade-out .3s ease-in-out forwards;
+    }
+}
+
+.mob-link-item {
+    text-align: center;
+    text-transform: uppercase;
+    padding: 2rem;
+    position: relative;
+
+    & a {
+        color: $white;
+        font-size: 1.5rem;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 900;
+        text-shadow: $textShadow;
+        letter-spacing: 1px;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        display: block;
+        height: .3125rem;
+        left: 25%;
+        right: 25%;
+        bottom: 1.3rem;
+        background: $mainOrange;
+        box-shadow: $boxShadow;
+        transform: scale(0, 1);
+        transition: transform .5s ease-in-out;
+    }
+
+    &:hover::before {
+        transform: scale(1.2, 1);
+    }
+}

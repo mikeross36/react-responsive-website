@@ -1,0 +1,124 @@
+.subscribe {
+    height: 100%;
+    position: relative;
+
+    .form-wrapper {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        text-align: center;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        max-width: 21rem;
+        max-height: 17rem;
+        box-shadow: .25rem .25rem .25rem black;
+        border-radius: .5rem;
+        background: $bodyBackground;
+        padding-bottom: 2rem;
+
+        &.sendEmail {
+            background: url(images//nio-smith.jpg) center/cover no-repeat;
+            border: .2rem double #ffffff;
+        }
+
+        @media screen and (min-width: 49em) {
+            display: grid;
+            grid-template-columns: 60% 40%;
+            grid-gap: 1rem;
+            justify-items: center;
+            align-items: center;
+            align-content: space-evenly;
+            background-size: 50%;
+            max-width: 35rem;
+            height: 14rem;
+            padding: 0 3rem;
+        }
+
+        & form {
+            font-size: 1rem;
+            color: #ffffff;
+            text-shadow: .125rem .125rem .125rem black;
+        
+            &.sendEmail {
+                opacity: 0;
+            }
+        
+            @media screen and (min-width: 49em) {
+                font-size: 1.5rem;
+            }
+
+            & h4 {
+                margin: .7rem 0;
+                text-transform: capitalize;
+                color: #ffffff; 
+            }
+
+            & input {
+                border-radius: 5rem;
+                border: .1rem solid #ffffff;
+                outline: none;
+                width: 100%;
+                max-width: 17rem;
+                height: auto;
+                min-height: 2rem;
+                padding-left: 1rem;
+                margin: .5rem 0;
+                background: #faf8f8;
+                color: #050505;
+
+                &::placeholder {
+                    color: #050505;
+                }
+
+                &.sendEmail {
+                    opacity: 0;
+                }
+
+                @media screen and (min-width: 49em) {
+                    max-width: 25rem;
+                } 
+            }
+
+            & p {
+                font-size: .6rem;
+                color: #ffffff;
+                text-transform: uppercase;
+                text-shadow: .125rem .125rem .125rem black;
+            
+                &.sendEmail {
+                    opacity: 0;
+                } 
+            }
+        }
+
+        .subscribe-btn {
+            padding: .4rem 1.5rem;
+            background: $mainGreen;
+            border: none;
+            border-radius: 5rem;
+            color: #ffffff;
+            text-shadow: .125rem .125rem .125rem black;
+            box-shadow: .25rem .25rem .5rem black;
+            cursor: pointer;
+
+            &:hover {
+                color: $mainGold;
+                background: $mainGrey;
+            }
+            
+            &.sendEmail {
+                opacity: 0;
+            }
+            
+            &:active {
+                transform: translateY(5px);
+                outline: none;
+            } 
+        
+            @media screen and (min-width: 49em) {
+                margin-top: 1rem;
+                padding: .4rem 2.5rem;
+            }
+        }
+    }
+}
