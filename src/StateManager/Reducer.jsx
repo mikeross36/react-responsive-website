@@ -31,7 +31,7 @@ function clearCart(state){
 function increaseQuant(state, id){
     let incItemQuant = state.cartItems.map(function(cartItem){
         if(cartItem.id === id){
-            return {...cartItem, quantity: cartItem.quantity++}
+            return {...cartItem, quantity: cartItem.quantity +1}
         }
         return cartItem
     })
@@ -41,7 +41,7 @@ function increaseQuant(state, id){
 function decreaseQuant(state, id){
     let decItemQuant = state.cartItems.map(function(cartItem){
         if(cartItem.id === id){
-            return {...cartItem, quantity: cartItem.quantity--}
+            return {...cartItem, quantity: cartItem.quantity -1}
         }
         return cartItem;
     }).filter(function(cartItem){

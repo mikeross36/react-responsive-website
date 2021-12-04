@@ -8,7 +8,11 @@ export default function ShopNav({openCart, cartItemsTotal}){
             <div className="cart-icon-wrapper"
                 onClick={openCart}>
                 <FaCartPlus className="cart-icon"/>
-                <span className="cart-count" data-testid="items-total">{cartItemsTotal}</span>
+                <span 
+					className="cart-count" 
+					data-testid="items-total">
+					{cartItemsTotal}
+				</span>
             </div>
         </nav>
     )
