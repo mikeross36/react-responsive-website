@@ -1,4 +1,4 @@
-import {render, screen} from "@testing-library/react"
+import {act, render, screen} from "@testing-library/react"
 import Cart from "./Cart"
 import AppProvider from "../../../StateManager/AppProvider"
 
@@ -22,5 +22,19 @@ describe("testing cart component", function(){
         expect(screen.getByTestId("aside")).toBeTruthy()
         expect(screen.getByRole("button")).toHaveTextContent(/close/i)
         expect(screen.getByText(/your cart/i)).toBeTruthy()
+    })
+
+    test("should render empty cart element", function(){
+        act(function(){
+            CartRender()
+            expect(screen.getByTestId("empty-cart")).toHaveClass("empty-cart")
+        })
+    })
+
+    test("should render footer", function(){
+        act(function(){
+            CartRender()
+            expect(screen.getByRole("contentinfo")).toHaveClass("cart-footer")
+        })
     })
 });

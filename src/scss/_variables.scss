@@ -1,15 +1,20 @@
 $mainGrey: #58595a;
 $lightGrey: #878788;
-$mainGold: #f9d423;
+$mainGold: #ffd452;
 $mainGreen: #6e9172;
 $lightGreen: #31bd31;
+$fancyGreen: #6A9113;
 $white: #ffffff;
-$black: #000000;
+$black: #333333;
 $mainBlue: #34516d;
-$mainRed: #f05454;
-$mainOrange: #FFC371;
-$bodyBackground: #203A43;
+$lightBlue: #5f87ad;
+$mainOrange: #f51c1c;
+// $bodyBackground: #4AC29A;
+$bodyBackground: #eee6d7;
 
-$boxShadow: .25rem .25rem .25rem black;
-// $boxShadow2: .25rem .25rem .25rem black;
-$textShadow: .125rem .125rem .125rem black;
+$boxShadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+$btnBoxShadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+$boxShadow2: -.5rem .5rem .25rem $mainGrey;
+$textShadow: .125rem .125rem .125rem $mainGrey;
+$textShadow2: .1rem .1rem .1rem $black;
+$radius: 5px;
